@@ -8,4 +8,4 @@
 
 * Then tou are ready to run the project.
 
-
+* Please ignore the images.
