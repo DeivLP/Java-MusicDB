@@ -1,11 +1,7 @@
 # Java MusicDB
 
-* Fisrt open the sql file in the SQL archive with MySQL or other SQL editor.
+* Firts at all open MySQL or other editor and run de sql file and create the database.
 
-* Create DB and open PHPMyAdmin to see your databse.
+* Then start xampp control and apache and mysql servers. Now click in apache admin and once you have did it you should click in phpMyadmin to administrate your database and see the files saved.
 
-* Open Netbeans or whatever you want and open the project.
-
-* Then tou are ready to run the project.
-
-* Please ignore the images.
+* Last step is run the project with netbeans or eclipse and start to save your songs.
