@@ -1,22 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemamusica;
+
 import java.sql.*;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author a18davidlp
  */
 public class Pantallaeliminar extends javax.swing.JInternalFrame {
+
     /**
      * Creates new form Pantallaeliminar
      */
     public Pantallaeliminar() {
         initComponents();
-         try {
+        try {
             Class.forName("com.mysql.jdbc.Driver.class");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Pantallaregistro.class.getName()).log(Level.SEVERE, null, ex);
@@ -124,7 +123,9 @@ public class Pantallaeliminar extends javax.swing.JInternalFrame {
             smt.executeUpdate("DELETE FROM canciones WHERE Titulo LIKE '" + tfTitulo3.getText() + "' OR Grupo LIKE '" + tfGrupo3.getText() + "'"); //eliminamos los datos que queramos de la bd en el resultset.
         } catch (SQLException ex) {
             Logger.getLogger(Pantallaconsulta.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
         }
+        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
     }//GEN-LAST:event_btEliminarActionPerformed
 
 

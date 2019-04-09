@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemamusica;
 
 /**
@@ -14,10 +9,10 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    
     Pantallaregistro pantallaregistro;
     Pantallaconsulta pantallaconsulta;
     Pantallaeliminar pantallaeliminar;
+
     public Principal() {
         initComponents();
         pantallaregistro = new Pantallaregistro();
@@ -142,7 +137,7 @@ public class Principal extends javax.swing.JFrame {
         pantallaconsulta.setVisible(false);
         pantallaregistro.setVisible(false);
         pantallaeliminar.setVisible(true);
-        
+
     }//GEN-LAST:event_itEliminarActionPerformed
 
     /**
@@ -152,7 +147,7 @@ public class Principal extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -177,7 +172,8 @@ public class Principal extends javax.swing.JFrame {
             public void run() {
                 new Principal().setVisible(true);
             }
-        });
+        }
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

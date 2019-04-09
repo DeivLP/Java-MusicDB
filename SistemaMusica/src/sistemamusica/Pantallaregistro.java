@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemamusica;
 
 import java.sql.*;
@@ -19,15 +14,16 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
      * Creates new form Pantallaregistro
      */
     Connection co;
+
     public Pantallaregistro() {
         initComponents();
-        
+
         try {
             Class.forName("com.mysql.jdbc.Driver.class");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Pantallaregistro.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     /**
@@ -165,25 +161,26 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         String favorito = "";
-        if(rbFavoritos.isSelected()){
+        if (rbFavoritos.isSelected()) {
             favorito = "S";
-        }if(rbNoFavoritos.isSelected()){
+        }
+        if (rbNoFavoritos.isSelected()) {
             favorito = "N";
         }
-        
+
         try {
             co = DriverManager.getConnection("jdbc:mysql://localhost/bd_musica", "root", "");
             Statement stm = co.createStatement();
-            stm.executeUpdate("INSERT INTO canciones(id_cancion, Titulo, Genero, Grupo, Favorito) VALUES('"+ID.getText()+"', '"+Titulo.getText()+"', '"+Genero.getText()+"', '"+Grupo.getText()+"', '"+favorito+"')");
+            stm.executeUpdate("INSERT INTO canciones(id_cancion, Titulo, Genero, Grupo, Favorito) VALUES('" + ID.getText() + "', '" + Titulo.getText() + "', '" + Genero.getText() + "', '" + Grupo.getText() + "', '" + favorito + "')");
         } catch (SQLException ex) {
             Logger.getLogger(Pantallaregistro.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
         }
-        
+
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TituloActionPerformed

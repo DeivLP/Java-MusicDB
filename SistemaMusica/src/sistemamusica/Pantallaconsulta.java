@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemamusica;
 
 import java.sql.*;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,7 +16,6 @@ public class Pantallaconsulta extends javax.swing.JInternalFrame {
      */
     public Pantallaconsulta() {
         initComponents();
-
         try {
             Class.forName("com.mysql.jdbc.Driver.class");
         } catch (ClassNotFoundException ex) {
@@ -146,27 +141,31 @@ public class Pantallaconsulta extends javax.swing.JInternalFrame {
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
         try {
             // TODO add your handling code here:
-            //Aqui le decimos que almacene todo lo que tiene para buscar
-            DefaultTableModel modelo = (DefaultTableModel) tbResultado.getModel(); //Hay que hacer cast, incompatible types.
+            //Store all data
+            DefaultTableModel modelo = (DefaultTableModel) tbResultado.getModel();
 
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/bd_musica", "root", "");
             Statement smt = con.createStatement();
             ResultSet rs = smt.executeQuery("SELECT * FROM canciones WHERE Titulo LIKE '" + tfTitulo.getText() + "' OR Grupo LIKE '" + tfGrupo.getText() + "'"); //guardamos todos los datos de la bd en el resultset.
 
-            //hacemos un bucle. Comienzo del resultset.
-            rs.first();//rs se coloca al principio de la tabla.
+            //Repeat result if there are most that ane result
+            //rs it's putted at the top
+            rs.first();
             do {
-                //esto me va a agregar a la tabla cada una de las filas.
-                //cada vez que haga un ciclo fila +1
-                //cada rs.getString corresponde a cada una de las columnas de la bd.
+                //add rows to the table
+                //+1 row each iteration
+                //rs.getString correspond to tables's columns
                 String[] fila = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)};
-                modelo.addRow(fila); //añadimos al objeto tabla una fila cada ciclo.
+                //row added each iteration
+                modelo.addRow(fila);
 
             } while (rs.next());
 
         } catch (SQLException ex) {
             Logger.getLogger(Pantallaconsulta.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
         }
+        JOptionPane.showMessageDialog(null, "Se ha consultado correctamente");
     }//GEN-LAST:event_btConsultarActionPerformed
 
 
