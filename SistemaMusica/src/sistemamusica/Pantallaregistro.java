@@ -17,13 +17,11 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
 
     public Pantallaregistro() {
         initComponents();
-
         try {
             Class.forName("com.mysql.jdbc.Driver.class");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Pantallaregistro.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**
@@ -36,17 +34,17 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         Grupo1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
         Titulo = new javax.swing.JTextField();
         Genero = new javax.swing.JTextField();
         Grupo = new javax.swing.JTextField();
         rbFavoritos = new javax.swing.JRadioButton();
         rbNoFavoritos = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         ID = new javax.swing.JTextField();
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel1.setText("Registrar canciones");
+        setForeground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Titulo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         Titulo.setText("Título de la canción");
@@ -94,6 +92,9 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
                 rbNoFavoritosActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setText("Registrar canciones");
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jButton1.setText("Registrar");
@@ -147,7 +148,7 @@ public class Pantallaregistro extends javax.swing.JInternalFrame {
                 .addComponent(Grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbFavoritos)
                     .addComponent(rbNoFavoritos))

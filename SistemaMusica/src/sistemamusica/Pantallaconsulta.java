@@ -148,7 +148,7 @@ public class Pantallaconsulta extends javax.swing.JInternalFrame {
             Statement smt = con.createStatement();
             ResultSet rs = smt.executeQuery("SELECT * FROM canciones WHERE Titulo LIKE '" + tfTitulo.getText() + "' OR Grupo LIKE '" + tfGrupo.getText() + "'"); //guardamos todos los datos de la bd en el resultset.
 
-            //Repeat result if there are most that ane result
+            //Repeat result if there are most that one result
             //rs it's putted at the top
             rs.first();
             do {
